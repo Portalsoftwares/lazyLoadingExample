@@ -1,0 +1,16 @@
+<div>
+  <input
+    (click)="allowAccess()"
+    type="checkbox"
+    style="height: 30px; width: 30px"
+  />
+</div>
+<h2>{{ parentName }}</h2>
+<app-show-name
+  (parentName)="recieveName($event)"
+  [userName]="firstName"
+></app-show-name>
+<app-show-name
+  (parentName)="recieveName($event)"
+  [userName]="lastName"
+></app-show-name>

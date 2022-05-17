@@ -1,0 +1,23 @@
+<div class="form-wrapper">
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" [(ngModel)]="editUserModel.firstName" />
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" [(ngModel)]="editUserModel.lastName" />
+  <button (click)="editMode ? updateUser() : addUser()">
+    <span *ngIf="!editMode">Submit</span>
+    <span *ngIf="editMode">Update</span>
+  </button>
+  <button *ngIf="editMode" (click)="cancelEdit()">Cancel</button>
+
+  <div class="user-list" *ngIf="users.length != 0">
+    <div *ngFor="let user of users; let i = index">
+      <div class="spacing">
+        <div class="user-wrapper">
+          {{ user.firstName }} {{ user.lastName }}
+          <button class="edit-user" (click)="editUser(i)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="clearUsers()">Clear All Users</button>
+</div>

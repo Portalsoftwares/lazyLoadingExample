@@ -1,0 +1,17 @@
+<div class="container my-3">
+  <input type="text" [(ngModel)]="temporaryName" #inputElement />
+  <button class="btn btn-primary mx-3" (click)="onClick()">Submit</button>
+</div>
+<h2>{{ parentName }}</h2>
+<app-show-name
+  (parentName)="recieveName($event)"
+  [userName]="firstName"
+></app-show-name>
+<div class="container">
+  <div class="mx-5 my-3">{{ currentTime | date: "d/M/yyyy" }}</div>
+  <div class="mx-5 my-3">{{ currentTime | date: "hh:mm:ss a" }}</div>
+  <button class="btn btn-primary" (click)="startClock()">Start clock</button>
+  <button class="btn btn-danger mx-3" (click)="stopClock()">Pause clock</button>
+</div>
+
+<router-outlet></router-outlet>

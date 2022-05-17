@@ -1,0 +1,71 @@
+<div *ngIf="spinnerVisible" class="d-flex justify-content-center">
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only" id="loading"></span>
+  </div>
+</div>
+
+<div class="shops-container container">
+  <div>
+    <select
+      (change)="showShopProducts($event)"
+      [value]="selectedShop.Id"
+      class="my-3"
+    >
+      <option [value]="shop.Id" *ngFor="let shop of shopsData">
+        <div>{{ shop.Name }}</div>
+      </option>
+    </select>
+    <label class="mx-3" for="filter">Filter the list:</label>
+    <input
+      id="filter"
+      class="filter-field"
+      type="text"
+      [(ngModel)]="filterQuery"
+    />
+    <button class="btn btn-secondary mx-3" (click)="filterProducts()">
+      Filter
+    </button>
+    <div class="radio-group">
+      <input
+        id="all"
+        type="radio"
+        value="all"
+        name="odd-even"
+        [(ngModel)]="radioValue"
+      />
+      <label for="all">All</label>
+      <input
+        id="odd"
+        type="radio"
+        value="odd"
+        name="odd-even"
+        [(ngModel)]="radioValue"
+      />
+      <label for="odd">Odd</label>
+      <input
+        id="even"
+        type="radio"
+        value="even"
+        name="odd-even"
+        [(ngModel)]="radioValue"
+      />
+      <label for="even">Even</label>
+    </div>
+    <div class="mb-3">
+      <label class="mx-3" for="price">Price ></label>
+      <input type="number" id="price" [(ngModel)]="priceGreaterThen" />
+    </div>
+    <div>
+      <label class="mx-3" for="price">Price <</label>
+      <input type="number" id="price" [(ngModel)]="priceLesserThen" />
+    </div>
+    <div *ngIf="selectedShop">
+      <div *ngFor="let product of productsData" class="products-list">
+        <div class="product-item" #products>
+          {{ product.Id }} {{ product.Name }} {{ product.Price.Currency }}
+          {{ product.Price.Value }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

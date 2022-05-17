@@ -1,0 +1,11 @@
+.flag-icon {
+  height: 50px;
+}
+
+span {
+  transition: all 0.1s ease-in;
+}
+
+span:hover {
+  transform: scale(1.3);
+}

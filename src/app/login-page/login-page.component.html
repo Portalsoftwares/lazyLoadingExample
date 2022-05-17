@@ -1,0 +1,13 @@
+<div class="login-wrapper">
+  <div class="login-element">
+    <label for="username">Username</label>
+    <input type="text" id="username" [(ngModel)]="userName" />
+  </div>
+  <div class="login-element">
+    <label for="password">Password</label>
+    <input type="text" id="password" [(ngModel)]="password" />
+  </div>
+  <div class="login-element">
+    <button (click)="isLoggedIn()">Submit</button>
+  </div>
+</div>

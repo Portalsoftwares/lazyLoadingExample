@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="languages">
+    <span
+      class="flag-icon flag-icon-gb mx-3"
+      (click)="translateToEnglish()"
+    ></span>
+    <span class="flag-icon flag-icon-rs" (click)="translateToSerbian()"></span>
+  </div>
+  <div>
+    <h1>{{ "demo.title" | translate }}</h1>
+    <p>{{ "demo.text" | translate }}</p>
+  </div>
+</div>

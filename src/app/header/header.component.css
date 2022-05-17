@@ -1,0 +1,22 @@
+.nav {
+  margin-top: 20px;
+  width: 1000px;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-links a {
+  text-decoration: none;
+  background: rgb(85, 167, 74);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 15px;
+}
+
+.nav-active {
+  font-weight: 600;
+  transform: scale(1.1);
+}

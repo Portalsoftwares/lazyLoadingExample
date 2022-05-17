@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <h2>{{ userName }}</h2>
+  <input type="text" [(ngModel)]="name" />
+  <button (click)="showName()">Show name</button>
+  <div class="text-output" appChangeColor #textOutput>
+    {{ sale | toUpperCase }}
+  </div>
+</div>
